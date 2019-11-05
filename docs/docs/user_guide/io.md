@@ -3151,9 +3151,9 @@ None
 
 ```
 
-##HTML
+## HTML
 
-###读取HTML的内容
+### 读取HTML的内容
 
 ::: danger 警告：
 我们**强烈建议**你阅读 [HTML Table Parsing gotchas](https://www.pypandas.cn/docs/user_guide/io.html#io-html-gotchas)里面相关的围绕BeautifulSoup4/html5lib/lxml解析器部分的问题。
@@ -3363,7 +3363,7 @@ dfs = pd.read_html(url, 'Metcalf Bank', index_col=0, flavor=['lxml', 'bs4'])
 
 ```
 
-###写入HTML文件
+### 写入HTML文件
 `DataFrame`对象具有实例的方法`to_html`，它能渲染`DataFrame`的内容为HTML表格。这个函数的参数同上面的`to_string`方法的一样。
 
 ::: tip 注意：
@@ -3506,8 +3506,8 @@ HTML：
 
 | **-** | **0** | **1** |
 | --- | --- |
-|  **0 **| -0.1847438576 	  | 0.4969711327 |
-| **1 **| -0.8562396763| 1.8579766508 |
+|  **0 ** | -0.1847438576 | 0.4969711327 |
+| **1 ** | -0.8562396763 | 1.8579766508 |
 
 默认情况下，`bold_rows`可以加粗行标签，但是你可以关掉它：
 
@@ -3539,8 +3539,8 @@ In [307]: print(df.to_html(bold_rows=False))
 
 | **-** | **0** | **1** |
 | --- | --- |
-|  0 |-0.184744 	 | 0.496971|
-|  1 |-0.856240| 1.857977 |
+|  0 | -0.184744 | 0.496971 |
+|  1 | -0.856240 | 1.857977 |
 
 `classes `参数提供了能生成HTML表的CSS类的功能。注意这些类是已添加到现有的`'dataframe' `类中的。
 
@@ -3608,8 +3608,8 @@ HTML:
 
 | **-** | **name** | **url** |
 | --- | --- |
-| 0 | Python| [https://www.python.org/](https://www.python.org/) |
-| 1 | Pandas| [http://pandas.pydata.org](http://pandas.pydata.org) |
+| 0 | Python | [https://www.python.org/](https://www.python.org/) |
+| 1 | Pandas | [http://pandas.pydata.org](http://pandas.pydata.org) |
 
 最后，`escape`参数允许你控制是否对生成的 HTML字符“<”, “>”和 “&”进行转义（默认是`True`）。因此，获取不转义的HTML字符就设置为`escape=False`。
 
@@ -3651,9 +3651,9 @@ In [312]: print(df.to_html())
 ```
 | **-** | **a** | **b** |
 | --- | --- |
-| 0 |&| -0.474063 |
-| 1 | < |-0.230305|
-| 2 |>| -0.400654|
+| 0 | & | -0.474063 |
+| 1 | < | -0.230305 |
+| 2 | > | -0.400654 |
 
 不转义的：
 
@@ -3690,15 +3690,15 @@ In [313]: print(df.to_html(escape=False))
 
 | **-** | **a** | **b** |
 | --- | --- |
-| 0 |&| -0.474063 |
-| 1 | < |-0.230305|
-| 2 |>| -0.400654|
+| 0 | & | -0.474063 |
+| 1 | < | -0.230305 |
+| 2 | > | -0.400654 |
 
 ::: tip 注意：
 一些浏览器在渲染上面的两个HTML表格的时候可能看不出区别。
 :::
 
-###HTML表格解析陷阱
+### HTML表格解析陷阱
 
 在使用顶级的pandas io函数`read_html`来解析HTML表格的时候，围绕这些库，存在一些版本的问题。
 
